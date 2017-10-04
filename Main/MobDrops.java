@@ -83,7 +83,7 @@ public class MobDrops {
 	private static int rand(int max) {
 		if(max<=0)max=1;
 		int ret = new Random().nextInt(max);
-		if(ret<=0)ret=1;
+		if(ret<=2)ret=3;
 		return ret;
 	}
 	/** Returns Item from Block
@@ -121,14 +121,14 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.LEATHER, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.BONE, rand(3));};break;
-			case 2: if(rand(4)>1){w.dropItem(Items.WHEAT, rand(3));};break;
+			default:if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.LEATHER, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.BONE, rand(3));};break;
+			case 2: if(rand(4)>0){w.dropItem(Items.WHEAT, rand(3));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>1){w.dropItem(Items.BEETROOT_SEEDS, rand(6));};break;
-			case 4: if(rand(4)>1){w.dropItem(Items.MELON_SEEDS,rand(6));};break;
-			case 5: if(rand(4)>1){w.dropItem(Items.PUMPKIN_SEEDS, rand(6));};break;
+			case 3: if(rand(4)>0){w.dropItem(Items.BEETROOT_SEEDS, rand(6));};break;
+			case 4: if(rand(4)>0){w.dropItem(Items.MELON_SEEDS,rand(6));};break;
+			case 5: if(rand(4)>0){w.dropItem(Items.PUMPKIN_SEEDS, rand(6));};break;
 		}
 	}
 
@@ -144,14 +144,14 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.LEATHER, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.MUTTON, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.BONE, rand(3));};break;
-			case 2: if(rand(4)>1){w.dropItem(Items.LEATHER, rand(3));};break;
+			default:if(rand(4)>0){w.dropItem(Items.LEATHER, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.MUTTON, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.BONE, rand(3));};break;
+			case 2: if(rand(4)>0){w.dropItem(Items.LEATHER, rand(3));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>1){w.dropItem(Items.PUMPKIN_SEEDS, rand(6));};break;
-			case 4: if(rand(4)>1){w.dropItem(Items.MELON_SEEDS,rand(6));};break;
-			case 5: if(rand(4)>1){w.dropItem(IFB(Blocks.CARPET), rand(2));};break;
+			case 3: if(rand(4)>0){w.dropItem(Items.PUMPKIN_SEEDS, rand(6));};break;
+			case 4: if(rand(4)>0){w.dropItem(Items.MELON_SEEDS,rand(6));};break;
+			case 5: if(rand(4)>0){w.dropItem(IFB(Blocks.CARPET), rand(2));};break;
 		}
 	}
 
@@ -167,14 +167,14 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.LEATHER, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.LEATHER, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.BONE, rand(3));};break;
-			case 2: if(rand(4)>1){w.dropItem(Items.WHEAT, rand(3));};break;
+			default:if(rand(4)>0){w.dropItem(Items.LEATHER, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.LEATHER, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.BONE, rand(3));};break;
+			case 2: if(rand(4)>0){w.dropItem(Items.WHEAT, rand(3));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>1){w.dropItem(Items.BEETROOT_SEEDS, rand(6));};break;
-			case 4: if(rand(4)>1){w.dropItem(Items.MELON_SEEDS,rand(6));};break;
-			case 5: if(rand(4)>1){w.dropItem(Items.PUMPKIN_SEEDS, rand(6));};break;
+			case 3: if(rand(4)>0){w.dropItem(Items.BEETROOT_SEEDS, rand(6));};break;
+			case 4: if(rand(4)>0){w.dropItem(Items.MELON_SEEDS,rand(6));};break;
+			case 5: if(rand(4)>0){w.dropItem(Items.PUMPKIN_SEEDS, rand(6));};break;
 		}
 	}
 
@@ -190,14 +190,14 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.LEATHER, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.BONE, rand(3));};break;
-			case 2: if(rand(4)>1){w.dropItem(Items.WHEAT, rand(3));};break;
+			default:if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.LEATHER, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.BONE, rand(3));};break;
+			case 2: if(rand(4)>0){w.dropItem(Items.WHEAT, rand(3));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>1){w.dropItem(Items.BEETROOT_SEEDS, rand(6));};break;
-			case 4: if(rand(4)>1){w.dropItem(Items.MELON_SEEDS,rand(6));};break;
-			case 5: if(rand(4)>1){w.dropItem(Items.PUMPKIN_SEEDS, rand(6));};break;
+			case 3: if(rand(4)>0){w.dropItem(Items.BEETROOT_SEEDS, rand(6));};break;
+			case 4: if(rand(4)>0){w.dropItem(Items.MELON_SEEDS,rand(6));};break;
+			case 5: if(rand(4)>0){w.dropItem(Items.PUMPKIN_SEEDS, rand(6));};break;
 		}
 	}
 
@@ -213,13 +213,13 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.BONE, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.ROTTEN_FLESH, rand(3));};break;
+			default:if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.BONE, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.ROTTEN_FLESH, rand(3));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>1){w.dropItem(Items.POISONOUS_POTATO, rand(2));};break;
-			case 4: if(rand(4)>1){w.dropItem(Items.IRON_INGOT,rand(3));};break;
-			case 5: if(rand(4)>1){w.dropItem(Items.EMERALD, rand(1));};break;
+			case 3: if(rand(4)>0){w.dropItem(Items.POISONOUS_POTATO, rand(2));};break;
+			case 4: if(rand(4)>0){w.dropItem(Items.IRON_INGOT,rand(3));};break;
+			case 5: if(rand(4)>0){w.dropItem(Items.EMERALD, rand(1));};break;
 		}
 	}
 
@@ -235,14 +235,14 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.ROTTEN_FLESH, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.WHEAT_SEEDS, rand(3));};break;
-			case 2: if(rand(4)>1){w.dropItem(RandomFood(), rand(3));};break;
+			default:if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.ROTTEN_FLESH, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.WHEAT_SEEDS, rand(3));};break;
+			case 2: if(rand(4)>0){w.dropItem(RandomFood(), rand(3));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>1){w.dropItem(Items.BEETROOT_SEEDS, rand(6));};break;
-			case 4: if(rand(4)>1){w.dropItem(Items.MELON_SEEDS,rand(6));};break;
-			case 5: if(rand(4)>1){w.dropItem(Items.PUMPKIN_SEEDS, rand(6));};break;
+			case 3: if(rand(4)>0){w.dropItem(Items.BEETROOT_SEEDS, rand(6));};break;
+			case 4: if(rand(4)>0){w.dropItem(Items.MELON_SEEDS,rand(6));};break;
+			case 5: if(rand(4)>0){w.dropItem(Items.PUMPKIN_SEEDS, rand(6));};break;
 		}
 	}
 
@@ -258,10 +258,10 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.NETHER_WART, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.BONE, rand(3));};break;
-			case 2: if(rand(4)>1){w.dropItem(Items.BONE, rand(3));};break;
+			default:if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.NETHER_WART, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.BONE, rand(3));};break;
+			case 2: if(rand(4)>0){w.dropItem(Items.BONE, rand(3));};break;
 			// LOOTING DROPS
 			case 3: if(rand(4)>2){w.dropItem(Items.BONE, rand(8));};break;
 			case 4: if(rand(4)>2){w.dropItem(getEquipedItem(w),1);};break;
@@ -281,14 +281,14 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.BONE, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(RandomFood(), rand(3));};break;
-			case 2: if(rand(4)>1){w.dropItem(Items.STICK, rand(3));};break;
+			default:if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.BONE, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(RandomFood(), rand(3));};break;
+			case 2: if(rand(4)>0){w.dropItem(Items.STICK, rand(3));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>1){w.dropItem(Items.GLASS_BOTTLE, rand(6));};break;
-			case 4: if(rand(4)>1){w.dropItem(Items.GLOWSTONE_DUST,rand(6));};break;
-			case 5: if(rand(4)>1){w.dropItem(Items.GUNPOWDER, rand(6));};break;
+			case 3: if(rand(4)>0){w.dropItem(Items.GLASS_BOTTLE, rand(6));};break;
+			case 4: if(rand(4)>0){w.dropItem(Items.GLOWSTONE_DUST,rand(6));};break;
+			case 5: if(rand(4)>0){w.dropItem(Items.GUNPOWDER, rand(6));};break;
 		}
 	}
 
@@ -304,14 +304,14 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.BONE, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(RandomFood(), rand(3));};break;
-			case 2: if(rand(4)>1){w.dropItem(Items.EMERALD, rand(1));};break;
+			default:if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.BONE, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(RandomFood(), rand(3));};break;
+			case 2: if(rand(4)>0){w.dropItem(Items.EMERALD, rand(1));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>1){w.dropItem(Items.POISONOUS_POTATO, rand(2));};break;
-			case 4: if(rand(4)>1){w.dropItem(RandomFood(),rand(6));};break;
-			case 5: if(rand(4)>1){w.dropItem(Items.EMERALD, rand(6));};break;
+			case 3: if(rand(4)>0){w.dropItem(Items.POISONOUS_POTATO, rand(2));};break;
+			case 4: if(rand(4)>0){w.dropItem(RandomFood(),rand(6));};break;
+			case 5: if(rand(4)>0){w.dropItem(Items.EMERALD, rand(6));};break;
 		}
 	}
 
@@ -327,7 +327,7 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.GHAST_TEAR, rand(1));};break;
+			default:if(rand(4)>0){w.dropItem(Items.GHAST_TEAR, rand(1));};break;
 			case 0: break;
 			case 1: break;
 			case 2: break;
@@ -350,9 +350,9 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.BONE, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.BONE, rand(3));};break;
+			default:if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.BONE, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.BONE, rand(3));};break;
 			case 2: if(rand(4)>3){w.dropItem(Items.ARROW, rand(3));};break;
 			// LOOTING DROPS
 			case 3: if(rand(4)>2){w.dropItem(Items.SKULL, rand(1));};break;
@@ -384,12 +384,12 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.BONE, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.BONE, rand(3));};break;
+			default:if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.BONE, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.BONE, rand(3));};break;
 			case 2: if(rand(4)>3){w.dropItem(Items.ARROW, rand(3));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>2){w.dropItem(Items.SKULL, rand(1));};break;
+			case 3: if(rand(4)>2){w.dropItem(Items.SKULL, 1);};break;
 			case 4: if(rand(4)>3){w.dropItem(Items.BONE, rand(8));};break;
 			case 5: if(rand(4)>3){w.dropItem(getEquipedItem(w), rand(1));};break;
 		}
@@ -438,10 +438,10 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.BONE, rand(2));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.PRISMARINE_SHARD, rand(3));};break;
-			case 2: if(rand(4)>1){w.dropItem(Items.FISH, rand(2));};break;
+			default:if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.BONE, rand(2));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.PRISMARINE_SHARD, rand(3));};break;
+			case 2: if(rand(4)>0){w.dropItem(Items.FISH, rand(2));};break;
 			// LOOTING DROPS
 			case 3: if(rand(4)>2){w.dropItem(Items.PRISMARINE_CRYSTALS, rand(1));};break;
 			case 4: if(rand(4)>2){w.dropItem(Items.BONE,rand(4));};break;
@@ -461,10 +461,10 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.BONE, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.GHAST_TEAR, rand(1));};break;
-			case 2: if(rand(4)>1){w.dropItem(Items.GUNPOWDER, rand(2));};break;
+			default:if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.BONE, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.GHAST_TEAR, rand(1));};break;
+			case 2: if(rand(4)>0){w.dropItem(Items.GUNPOWDER, rand(2));};break;
 			// LOOTING DROPS
 			case 3: if(rand(4)>2){w.dropItem(Items.GHAST_TEAR, rand(6));};break;
 			case 4: if(rand(4)>2){w.dropItem(Items.GOLD_NUGGET,rand(6));};break;
@@ -484,10 +484,10 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(RandomFood(), rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.BONE, rand(3));};break;
-			case 2: if(rand(4)>1){w.dropItem(Items.BONE, rand(3));};break;
+			default:if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(RandomFood(), rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.BONE, rand(3));};break;
+			case 2: if(rand(4)>0){w.dropItem(Items.BONE, rand(3));};break;
 			// LOOTING DROPS
 			case 3: if(rand(4)>2){w.dropItem(Items.EMERALD, rand(1));};break;
 			case 4: if(rand(4)>2){w.dropItem(RandomFood(),rand(6));};break;
@@ -507,10 +507,10 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.PRISMARINE_SHARD, rand(1));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.BONE, rand(3));};break;
-			case 2: if(rand(4)>1){w.dropItem(Items.FISH, rand(3));};break;
+			default:if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.PRISMARINE_SHARD, rand(1));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.BONE, rand(3));};break;
+			case 2: if(rand(4)>0){w.dropItem(Items.FISH, rand(3));};break;
 			// LOOTING DROPS
 			case 3: if(rand(4)>2){w.dropItem(Items.PRISMARINE_CRYSTALS, rand(6));};break;
 			case 4: if(rand(4)>2){w.dropItem(Items.FISH,rand(6));};break;
@@ -530,14 +530,14 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.BONE, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.GUNPOWDER, rand(3));};break;
+			default:if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.BONE, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.GUNPOWDER, rand(3));};break;
 			case 2: if(rand(4)>3){w.dropItem(new ItemStack(Blocks.SKULL,1,4).getItem(), rand(1));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>1){w.dropItem(Items.GUNPOWDER, rand(6));};break;
-			case 4: if(rand(4)>1){w.dropItem(Items.GUNPOWDER,rand(8));};break;
-			case 5: if(rand(4)>1){w.dropItem(Items.GUNPOWDER, rand(10));};break;
+			case 3: if(rand(4)>0){w.dropItem(Items.GUNPOWDER, rand(6));};break;
+			case 4: if(rand(4)>0){w.dropItem(Items.GUNPOWDER,rand(8));};break;
+			case 5: if(rand(4)>0){w.dropItem(Items.GUNPOWDER, rand(10));};break;
 		}
 	}
 
@@ -553,14 +553,14 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.BLAZE_ROD, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.BLAZE_ROD, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.BLAZE_POWDER, rand(3));};break;
+			default:if(rand(4)>0){w.dropItem(Items.BLAZE_ROD, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.BLAZE_ROD, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.BLAZE_POWDER, rand(3));};break;
 			case 2: if(rand(4)>2){w.dropItem(Items.MAGMA_CREAM, rand(3));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>1){w.dropItem(Items.BLAZE_ROD, rand(6));};break;
-			case 4: if(rand(4)>1){w.dropItem(Items.BLAZE_POWDER,rand(6));};break;
-			case 5: if(rand(4)>1){w.dropItem(Items.MAGMA_CREAM, rand(6));};break;
+			case 3: if(rand(4)>0){w.dropItem(Items.BLAZE_ROD, rand(6));};break;
+			case 4: if(rand(4)>0){w.dropItem(Items.BLAZE_POWDER,rand(6));};break;
+			case 5: if(rand(4)>0){w.dropItem(Items.MAGMA_CREAM, rand(6));};break;
 		}
 	}
 
@@ -576,14 +576,14 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.GOLD_NUGGET, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.BONE, rand(3));};break;
-			case 2: if(rand(4)>1){w.dropItem(Items.PORKCHOP, rand(1));};break;
+			default:if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.GOLD_NUGGET, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.BONE, rand(3));};break;
+			case 2: if(rand(4)>0){w.dropItem(Items.PORKCHOP, rand(1));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>1){w.dropItem(getEquipedItem(w), rand(1));};break;
-			case 4: if(rand(4)>1){w.dropItem(Items.GOLD_NUGGET,rand(6));};break;
-			case 5: if(rand(4)>1){w.dropItem(Items.GOLD_INGOT, rand(1));};break;
+			case 3: if(rand(4)>0){w.dropItem(getEquipedItem(w), rand(1));};break;
+			case 4: if(rand(4)>0){w.dropItem(Items.GOLD_NUGGET,rand(6));};break;
+			case 5: if(rand(4)>0){w.dropItem(Items.GOLD_INGOT, rand(1));};break;
 		}
 	}
 
@@ -599,14 +599,14 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.SNOWBALL, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.FISH, rand(3));};break;
-			case 2: if(rand(4)>1){w.dropItem(Items.BONE, rand(4));};break;
+			default:if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.SNOWBALL, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.FISH, rand(3));};break;
+			case 2: if(rand(4)>0){w.dropItem(Items.BONE, rand(4));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>1){w.dropItem(IFB(Blocks.ICE), rand(2));};break;
-			case 4: if(rand(4)>1){w.dropItem(Items.FISH,rand(6));};break;
-			case 5: if(rand(4)>1){w.dropItem(Items.BONE, rand(6));};break;
+			case 3: if(rand(4)>0){w.dropItem(IFB(Blocks.ICE), rand(2));};break;
+			case 4: if(rand(4)>0){w.dropItem(Items.FISH,rand(6));};break;
+			case 5: if(rand(4)>0){w.dropItem(Items.BONE, rand(6));};break;
 		}
 	}
 
@@ -622,10 +622,10 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(RandomFood(), rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.IRON_INGOT, rand(2));};break;
-			case 2: if(rand(4)>1){w.dropItem(Items.ROTTEN_FLESH, rand(3));};break;
+			default:if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(RandomFood(), rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.IRON_INGOT, rand(2));};break;
+			case 2: if(rand(4)>0){w.dropItem(Items.ROTTEN_FLESH, rand(3));};break;
 			// LOOTING DROPS
 			case 3: if(rand(4)>3){w.dropItem(getEquipedItem(w), rand(1));};break;
 			case 4: if(rand(4)>2){w.dropItem(Items.POISONOUS_POTATO,rand(6));};break;
@@ -645,9 +645,9 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.BONE, rand(2));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.FISH, rand(2));};break;
+			default:if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.BONE, rand(2));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.FISH, rand(2));};break;
 			// LOOTING DROPS
 			case 3: if(rand(4)>2){w.dropItem(Items.FISH, rand(3));};break;
 			case 4: if(rand(4)>3){w.dropItem(Items.EMERALD, rand(1));};break;
@@ -666,14 +666,14 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.BONE, rand(2));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.FEATHER, rand(3));};break;
-			case 2: if(rand(4)>1){w.dropItem(Items.WHEAT_SEEDS, rand(3));};break;
+			default:if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.BONE, rand(2));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.FEATHER, rand(3));};break;
+			case 2: if(rand(4)>0){w.dropItem(Items.WHEAT_SEEDS, rand(3));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>1){w.dropItem(Items.FEATHER, rand(6));};break;
-			case 4: if(rand(4)>1){w.dropItem(Items.MELON_SEEDS,rand(6));};break;
-			case 5: if(rand(4)>1){w.dropItem(Items.PUMPKIN_SEEDS, rand(6));};break;
+			case 3: if(rand(4)>0){w.dropItem(Items.FEATHER, rand(6));};break;
+			case 4: if(rand(4)>0){w.dropItem(Items.MELON_SEEDS,rand(6));};break;
+			case 5: if(rand(4)>0){w.dropItem(Items.PUMPKIN_SEEDS, rand(6));};break;
 		}
 	}
 
@@ -689,12 +689,12 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.BONE, rand(3));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.BONE, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.RABBIT, rand(1));};break;
-			case 2: if(rand(4)>1){w.dropItem(Items.BEEF, rand(1));};break;
+			default:if(rand(4)>0){w.dropItem(Items.BONE, rand(3));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.BONE, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.RABBIT, rand(1));};break;
+			case 2: if(rand(4)>0){w.dropItem(Items.BEEF, rand(1));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>1){w.dropItem(Items.BONE, rand(4));};break;
+			case 3: if(rand(4)>0){w.dropItem(Items.BONE, rand(4));};break;
 		}
 	}
 
@@ -710,10 +710,10 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.IRON_INGOT, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.IRON_INGOT, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(RandomFood(), rand(3));};break;
-			case 2: if(rand(4)>1){w.dropItem(IFB(Blocks.RED_FLOWER), rand(3));};break;
+			default:if(rand(4)>0){w.dropItem(Items.IRON_INGOT, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.IRON_INGOT, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(RandomFood(), rand(3));};break;
+			case 2: if(rand(4)>0){w.dropItem(IFB(Blocks.RED_FLOWER), rand(3));};break;
 			// LOOTING DROPS
 			case 3: if(rand(4)>2){w.dropItem(Items.IRON_INGOT, rand(6));};break;
 			case 4: if(rand(4)>3){w.dropItem(Items.GOLD_INGOT,rand(1));};break;
@@ -732,14 +732,14 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.BONE, rand(16));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.BONE, rand(20));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.ENDER_PEARL, rand(16));};break;
-			case 2: if(rand(4)>1){w.dropItem(Items.GUNPOWDER, rand(15));};break;
+			default:if(rand(4)>0){w.dropItem(Items.BONE, rand(16));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.BONE, rand(20));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.ENDER_PEARL, rand(16));};break;
+			case 2: if(rand(4)>0){w.dropItem(Items.GUNPOWDER, rand(15));};break;
 			// LOOTING DROPS
 			case 3: if(rand(4)>2){w.dropItem(Items.DIAMOND, rand(16));};break;
 			case 4: if(rand(4)>2){w.dropItem(Items.EMERALD,rand(16));};break;
-			case 5: if(rand(4)>1){w.dropItem(Items.GOLD_INGOT, rand(16));};break;
+			case 5: if(rand(4)>0){w.dropItem(Items.GOLD_INGOT, rand(16));};break;
 		}
 	}
 
@@ -755,14 +755,14 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.GOLD_INGOT, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.IRON_INGOT, rand(3));};break;
-			case 2: if(rand(4)>1){w.dropItem(Items.COAL, rand(3));};break;
+			default:if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.GOLD_INGOT, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.IRON_INGOT, rand(3));};break;
+			case 2: if(rand(4)>0){w.dropItem(Items.COAL, rand(3));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>1){w.dropItem(Items.EMERALD, rand(6));};break;
-			case 4: if(rand(4)>1){w.dropItem(Items.DIAMOND,rand(6));};break;
-			case 5: if(rand(4)>1){w.dropItem(Items.QUARTZ, rand(6));};break;
+			case 3: if(rand(4)>0){w.dropItem(Items.EMERALD, rand(6));};break;
+			case 4: if(rand(4)>0){w.dropItem(Items.DIAMOND,rand(6));};break;
+			case 5: if(rand(4)>0){w.dropItem(Items.QUARTZ, rand(6));};break;
 		}
 	}
 
@@ -778,14 +778,14 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.SNOWBALL, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.SNOWBALL, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.PUMPKIN_SEEDS, rand(3));};break;
+			default:if(rand(4)>0){w.dropItem(Items.SNOWBALL, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.SNOWBALL, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.PUMPKIN_SEEDS, rand(3));};break;
 			case 2: if(rand(4)>3){w.dropItem(Items.GOLD_NUGGET, rand(3));};break;
 			// LOOTING DROPS
 			case 3: if(rand(4)>2){w.dropItem(Items.GOLD_INGOT, rand(1));};break;
-			case 4: if(rand(4)>1){w.dropItem(Items.MELON_SEEDS,rand(6));};break;
-			case 5: if(rand(4)>1){w.dropItem(Items.PUMPKIN_SEEDS, rand(6));};break;
+			case 4: if(rand(4)>0){w.dropItem(Items.MELON_SEEDS,rand(6));};break;
+			case 5: if(rand(4)>0){w.dropItem(Items.PUMPKIN_SEEDS, rand(6));};break;
 		}
 	}
 
@@ -801,9 +801,9 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.ENDER_PEARL, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.BONE, rand(3));};break;
+			default:if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.ENDER_PEARL, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.BONE, rand(3));};break;
 			case 2: if(rand(4)>3){w.dropItem(Items.EMERALD, rand(1));};break;
 			// LOOTING DROPS
 			case 3: if(rand(4)>2){w.dropItem(Items.ENDER_PEARL, rand(5));};break;
@@ -824,14 +824,14 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.BONE, rand(2));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.SPIDER_EYE, rand(3));};break;
-			case 2: if(rand(4)>1){w.dropItem(Items.STRING, rand(3));};break;
+			default:if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.BONE, rand(2));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.SPIDER_EYE, rand(3));};break;
+			case 2: if(rand(4)>0){w.dropItem(Items.STRING, rand(3));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>1){w.dropItem(Items.STRING, rand(6));};break;
-			case 4: if(rand(4)>1){w.dropItem(Items.SPIDER_EYE,rand(6));};break;
-			case 5: if(rand(4)>1){w.dropItem(Items.GOLD_INGOT, rand(2));};break;
+			case 3: if(rand(4)>0){w.dropItem(Items.STRING, rand(6));};break;
+			case 4: if(rand(4)>0){w.dropItem(Items.SPIDER_EYE,rand(6));};break;
+			case 5: if(rand(4)>0){w.dropItem(Items.GOLD_INGOT, rand(2));};break;
 		}
 	}
 
@@ -849,14 +849,14 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.BEEF, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.LEATHER, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.BONE, rand(3));};break;
-			case 2: if(rand(4)>1){w.dropItem(Items.WHEAT, rand(3));};break;
+			default:if(rand(4)>0){w.dropItem(Items.BEEF, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.LEATHER, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.BONE, rand(3));};break;
+			case 2: if(rand(4)>0){w.dropItem(Items.WHEAT, rand(3));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>1){w.dropItem(Items.BEETROOT_SEEDS, rand(6));};break;
-			case 4: if(rand(4)>1){w.dropItem(Items.MELON_SEEDS,rand(6));};break;
-			case 5: if(rand(4)>1){w.dropItem(Items.PUMPKIN_SEEDS, rand(6));};break;
+			case 3: if(rand(4)>0){w.dropItem(Items.BEETROOT_SEEDS, rand(6));};break;
+			case 4: if(rand(4)>0){w.dropItem(Items.MELON_SEEDS,rand(6));};break;
+			case 5: if(rand(4)>0){w.dropItem(Items.PUMPKIN_SEEDS, rand(6));};break;
 		}
 		
 	}
@@ -871,15 +871,15 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.CHICKEN, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.EGG, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 2: if(rand(4)>1){w.dropItem(Items.FEATHER, rand(2));};break;
-			case 4: if(rand(4)>1){w.dropItem(Items.MELON_SEEDS, rand(2));};break;
+			default:if(rand(4)>0){w.dropItem(Items.CHICKEN, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.EGG, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 2: if(rand(4)>0){w.dropItem(Items.FEATHER, rand(2));};break;
+			case 4: if(rand(4)>0){w.dropItem(Items.MELON_SEEDS, rand(2));};break;
 			// LOOTING DROPS
-			case 5: if(rand(4)>1){w.dropItem(Items.EGG, rand(2));};break;
-			case 6: if(rand(4)>1){w.dropItem(Items.FEATHER,rand(6));};break;
-			case 7: if(rand(4)>1){w.dropItem(Items.WHEAT_SEEDS, rand(6));};break;
+			case 5: if(rand(4)>0){w.dropItem(Items.EGG, rand(2));};break;
+			case 6: if(rand(4)>0){w.dropItem(Items.FEATHER,rand(6));};break;
+			case 7: if(rand(4)>0){w.dropItem(Items.WHEAT_SEEDS, rand(6));};break;
 		}
 		
 	}
@@ -894,14 +894,14 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.PORKCHOP, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.CARROT, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 2: if(rand(4)>1){w.dropItem(Items.PORKCHOP, rand(2));};break;
+			default:if(rand(4)>0){w.dropItem(Items.PORKCHOP, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.CARROT, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 2: if(rand(4)>0){w.dropItem(Items.PORKCHOP, rand(2));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>1){w.dropItem(Items.PORKCHOP, rand(2));};break;
-			case 4: if(rand(4)>1){w.dropItem(Items.CARROT_ON_A_STICK,rand(6));};break;
-			case 5: if(rand(4)>1){w.dropItem(Items.BONE, rand(6));};break;
+			case 3: if(rand(4)>0){w.dropItem(Items.PORKCHOP, rand(2));};break;
+			case 4: if(rand(4)>0){w.dropItem(Items.CARROT_ON_A_STICK,rand(6));};break;
+			case 5: if(rand(4)>0){w.dropItem(Items.BONE, rand(6));};break;
 		}
 		
 	}
@@ -916,13 +916,13 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.RABBIT_HIDE, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.CARROT, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 2: if(rand(4)>1){w.dropItem(Items.PORKCHOP, rand(2));};break;
+			default:if(rand(4)>0){w.dropItem(Items.RABBIT_HIDE, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.CARROT, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 2: if(rand(4)>0){w.dropItem(Items.PORKCHOP, rand(2));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>1){w.dropItem(Items.RABBIT_FOOT, rand(2));};break;
-			case 4: if(rand(4)>1){w.dropItem(Items.CARROT,rand(6));};break;
+			case 3: if(rand(4)>0){w.dropItem(Items.RABBIT_FOOT, rand(2));};break;
+			case 4: if(rand(4)>0){w.dropItem(Items.CARROT,rand(6));};break;
 			case 5: if(((EntityRabbit)w).getRabbitType()==4){w.dropItem(Items.GOLDEN_CARROT, rand(2));};break;
 		}
 		
@@ -938,14 +938,14 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.MUSHROOM_STEW, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.WHEAT, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 2: if(rand(4)>1){w.dropItem(Items.MILK_BUCKET, rand(1));};break;
+			default:if(rand(4)>0){w.dropItem(Items.MUSHROOM_STEW, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.WHEAT, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 2: if(rand(4)>0){w.dropItem(Items.MILK_BUCKET, rand(1));};break;
 			// LOOTING DROPS
 			case 3: if(rand(4)>3){w.dropItem(Items.GOLDEN_APPLE, rand(2));};break;
-			case 4: if(rand(4)>1){w.dropItem(Items.BEEF,rand(6));};break;
-			case 5: if(rand(4)>1){w.dropItem(Items.PUMPKIN_SEEDS, rand(6));};break;
+			case 4: if(rand(4)>0){w.dropItem(Items.BEEF,rand(6));};break;
+			case 5: if(rand(4)>0){w.dropItem(Items.PUMPKIN_SEEDS, rand(6));};break;
 		}
 		
 	}
@@ -960,14 +960,14 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.MUTTON, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(IFB(Blocks.WOOL), rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 2: if(rand(4)>1){w.dropItem(Items.WHEAT, rand(2));};break;
+			default:if(rand(4)>0){w.dropItem(Items.MUTTON, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(IFB(Blocks.WOOL), rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 2: if(rand(4)>0){w.dropItem(Items.WHEAT, rand(2));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>1){w.dropItem(Items.BEETROOT_SEEDS, rand(2));};break;
-			case 4: if(rand(4)>1){w.dropItem(Items.PUMPKIN_SEEDS,rand(6));};break;
-			case 5: if(rand(4)>1){w.dropItem(Items.WHEAT_SEEDS, rand(6));};break;
+			case 3: if(rand(4)>0){w.dropItem(Items.BEETROOT_SEEDS, rand(2));};break;
+			case 4: if(rand(4)>0){w.dropItem(Items.PUMPKIN_SEEDS,rand(6));};break;
+			case 5: if(rand(4)>0){w.dropItem(Items.WHEAT_SEEDS, rand(6));};break;
 		}
 		
 	}
@@ -982,14 +982,14 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.DYE, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.CARROT, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 2: if(rand(4)>1){w.dropItem(Items.PORKCHOP, rand(2));};break;
+			default:if(rand(4)>0){w.dropItem(Items.DYE, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.CARROT, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 2: if(rand(4)>0){w.dropItem(Items.PORKCHOP, rand(2));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>1){w.dropItem(new ItemStack(Items.FISHING_ROD, 1, rand(50)).getItem(), rand(2));};break;
-			case 4: if(rand(4)>1){w.dropItem(Items.FISH,rand(6));};break;
-			case 5: if(rand(4)>1){w.dropItem(Items.DYE, rand(6));};break;
+			case 3: if(rand(4)>0){w.dropItem(new ItemStack(Items.FISHING_ROD, 1, rand(50)).getItem(), rand(2));};break;
+			case 4: if(rand(4)>0){w.dropItem(Items.FISH,rand(6));};break;
+			case 5: if(rand(4)>0){w.dropItem(Items.DYE, rand(6));};break;
 		}
 		
 	}
@@ -1004,14 +1004,14 @@ public class MobDrops {
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(rand(4)>1){w.dropItem(Items.POTATO, rand(3));};break;
-			case 1: if(rand(4)>1){w.dropItem(Items.BONE, rand(1));};break;
-			case 2: if(rand(4)>1){w.dropItem(Items.APPLE, rand(2));};break;
+			default:if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 0: if(rand(4)>0){w.dropItem(Items.POTATO, rand(3));};break;
+			case 1: if(rand(4)>0){w.dropItem(Items.BONE, rand(1));};break;
+			case 2: if(rand(4)>0){w.dropItem(Items.APPLE, rand(2));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>1){w.dropItem(IFB(Blocks.RED_FLOWER), rand(2));};break;
-			case 4: if(rand(4)>1){w.dropItem(Items.IRON_INGOT,rand(6));};break;
-			case 5: if(rand(4)>1){w.dropItem(Items.EMERALD, rand(6));};break;
+			case 3: if(rand(4)>0){w.dropItem(IFB(Blocks.RED_FLOWER), rand(2));};break;
+			case 4: if(rand(4)>0){w.dropItem(Items.IRON_INGOT,rand(6));};break;
+			case 5: if(rand(4)>0){w.dropItem(Items.EMERALD, rand(6));};break;
 		}
 		
 	}
