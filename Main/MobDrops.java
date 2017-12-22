@@ -5,7 +5,32 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.passive.EntityRabbit;
+import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.boss.EntityDragon;
+import net.minecraft.entity.boss.EntityWither;
+import net.minecraft.entity.monster.EntityBlaze;
+import net.minecraft.entity.monster.EntityCaveSpider;
+import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.entity.monster.EntityEnderman;
+import net.minecraft.entity.monster.EntityGhast;
+import net.minecraft.entity.monster.EntityIronGolem;
+import net.minecraft.entity.monster.EntityMagmaCube;
+import net.minecraft.entity.monster.EntityPigZombie;
+import net.minecraft.entity.monster.EntitySilverfish;
+import net.minecraft.entity.monster.EntitySkeleton;
+import net.minecraft.entity.monster.EntitySlime;
+import net.minecraft.entity.monster.EntityWitch;
+import net.minecraft.entity.monster.EntityZombie;
+import net.minecraft.entity.passive.EntityChicken;
+import net.minecraft.entity.passive.EntityCow;
+import net.minecraft.entity.passive.EntityHorse;
+import net.minecraft.entity.passive.EntityMooshroom;
+import net.minecraft.entity.passive.EntityOcelot;
+import net.minecraft.entity.passive.EntityPig;
+import net.minecraft.entity.passive.EntitySheep;
+import net.minecraft.entity.passive.EntitySquid;
+import net.minecraft.entity.passive.EntityVillager;
+import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -35,56 +60,81 @@ public class MobDrops {
 	}
 	
 	public static void LivingDropEvent(LivingDropsEvent e) {
-		//DEBUG : System.out.println("WDT > Mob Killed Name > " + e.getEntity().getName() );
-		switch(e.getEntity().getName().toLowerCase()) {
-			// Default incase an unknown mob is found.
-			default: /*System.out.println("UNKNOWN MOB KILLED!")*/;break;
-			// 44 MOBS HANDLED
-			case "cow": 				Cow(e);break;
-			case "chicken": 			Chicken(e);break;
-			case "squid":				Squid(e);break;
-			case "pig": 				Pig(e);break;
-			case "sheep": 				Sheep(e);break;
-			case "rabbit": 				Rabbit(e);break;
-			case "mooshroom": 			Mooshroom(e);break;
-			case "villager": 			Villager(e);;break;
-			case "cave spider": 		Cave_Spider(e);break;
-			case "enderman": 			Enderman(e);break;
-			case "polar bear": 			Polar_Bear(e);break;
-			case "spider": 				Cave_Spider(e);break;
-			case "zombie pigman": 		Zombie_Pigman(e);break;
-			case "blaze": 				Blaze(e);break;
-			case "creeper": 			Creeper(e);break;
-			case "elder guardian": 		Elder_Guardian(e);break;
-			case "endermite": 			Enderman(e);break;
-			case "evoker": 				Evoker(e);break;
-			case "ghast": 				Ghast(e);break;
-			case "guardian": 			Guardian(e);break;
-			case "husk": 				Husk(e);break;
-			case "magma cube": 			Magma_Cube(e);break;
-			case "shulker": 			Shulker(e);break;
-			case "silverfish": 			Silverfish(e);break;
-			case "skeleton": 			Skeleton(e);break;
-			case "slime": 				Slime(e);break;
-			case "stray": 				Stray(e);break;
-			case "vex": 				Vex(e);break;
-			case "vindicator": 			Vindicator(e);break;
-			case "witch": 				Witch(e);break;
-			case "wither skeleton": 	Wither_Skeleton(e);break;
-			case "zombie": 				Zombie(e);break;
-			case "zombie villager": 	Zombie_Villager(e);break;
-			case "donkey": 				Donkey(e);break;
-			case "horse": 				Horse(e);break;
-			case "llama":			 	Llama(e);break;
-			case "mule": 				Mule(e);break;
-			case "ocelot": 				Ocelot(e);break;
-			case "parrot": 				Parrot(e);break;
-			case "wolf": 				Wolf(e);break;
-			case "iron golem": 			Iron_Golem(e);break;
-			case "snow golem": 			Snow_Golem(e);break;
-			case "wither": 				Wither(e);break;
-			case "ender dragon": 		Ender_Dragon(e);break;
+		//DEBUG : System.out.println("WDT > Mob Killed Name > " + e.entityLiving.getName() );
+		EntityLiving meme = (EntityLiving) e.entityLiving;
+		
+		if(meme instanceof EntityBlaze) {
+			Blaze(e);
+		}else if(meme instanceof EntityCaveSpider) {
+			Cave_Spider(e);
+		}else if(meme instanceof EntityChicken) {
+			Chicken(e);
+		}else if(meme instanceof EntityCow) {
+			Cow(e);
+		}else if(meme instanceof EntityCreeper) {
+			Creeper(e);
+		}else if(meme instanceof EntityDragon) {
+			Ender_Dragon(e);
+		}else if(meme instanceof EntityEnderman) {
+			Enderman(e);
+		}else if(meme instanceof EntityGhast) {
+			Ghast(e);
+		}else if(meme instanceof EntityHorse) {
+			EntityHorse horsey = (EntityHorse) meme;
+			switch(horsey.getHorseType()) {
+				default: Horse(e);break;
+				case 0: Horse(e);break;
+				case 1: Donkey(e);break;
+				case 2: Mule(e);break;
+			}
+			// NEEDS TO BE CUSTOM MADE!
+		}else if(meme instanceof EntityMagmaCube) {
+			Magma_Cube(e);
+		}else if(meme instanceof EntityIronGolem) {
+			Iron_Golem(e);
+		}else if(meme instanceof EntityMooshroom) {
+			Mooshroom(e);
+		}else if(meme instanceof EntityOcelot) {
+			Ocelot(e);
+		}else if(meme instanceof EntityPig) {
+			Pig(e);
+		}else if(meme instanceof EntityPigZombie) {
+			Zombie_Pigman(e);
+		}else if(meme instanceof EntitySheep) {
+			Sheep(e);
+		}else if(meme instanceof EntitySilverfish) {
+			Silverfish(e);
+		}else if(meme instanceof EntitySkeleton) {
+			EntitySkeleton skeleboi = (EntitySkeleton) meme;
+			if(skeleboi.getSkeletonType() == 1) {
+				Wither_Skeleton(e);
+			}else {
+				Skeleton(e);
+			}
+			// CUSTOM CODE NEEDED!
+		}else if(meme instanceof EntitySlime) {
+			Slime(e);
+		}else if(meme instanceof EntitySquid) {
+			Squid(e);
+		}else if(meme instanceof EntityVillager) {
+			Villager(e);
+		}else if(meme instanceof EntityWitch) {
+			Witch(e);
+		}else if(meme instanceof EntityWither) {
+			Wither(e);
+		}else if(meme instanceof EntityWolf) {
+			Wolf(e);
+		}else if(meme instanceof EntityZombie) {
+			EntityZombie zom = (EntityZombie) meme;
+			if(zom.isVillager() == true) {
+				Zombie_Villager(e);
+			}else {
+				Zombie(e);
+			}
+		}else {
+			System.out.println("LOG: WDT: MOB KILLED: "+meme.getPersistentID());
 		}
+		return;
 	}
 	//===================
 	
@@ -93,7 +143,8 @@ public class MobDrops {
 	
 	*/
 	private static Item getEquipedItem(Entity e) {
-		return new ItemStack(e.getHeldEquipment().iterator().next().getItem(),1).getItem();
+		return null; // METHOD BROKEN!
+		//return new ItemStack(e.getHeldEquipment().iterator().next().getItem(),1).getItem();
 	}
 	
 	/** Crunches the Odds and Spits True or False
@@ -115,7 +166,7 @@ public class MobDrops {
 		if(max<=0)max=1;
 		int ret = new Random().nextInt(max);
 		
-		// === The Line Below is OPTIONAL. Toggleable in the CONFIG. ===
+		// === The Line Below is OPTIONAL. Toggle-able in the CONFIG. ===
 		if(MORE==true){ret = new Random().nextInt(16)+6;return ret;}
 		// =============================================================
 		
@@ -133,13 +184,13 @@ public class MobDrops {
 	 */
 	private static Item RandomFood() {
 		ArrayList<Item> foods = new ArrayList<Item>();
-		foods.add(Items.POTATO);
-		foods.add(Items.APPLE);
-		foods.add(Items.BREAD);
-		foods.add(Items.BEETROOT);
-		foods.add(Items.CARROT);
-		foods.add(Items.WHEAT_SEEDS);
-		foods.add(Items.WHEAT);
+		foods.add(Items.potato);
+		foods.add(Items.apple);
+		foods.add(Items.bread);
+		//foods.add(Items.BEETROOT); NOT IN 1.7.10! This line is leftovers from 1.12 Edition of this mod.
+		foods.add(Items.carrot);
+		foods.add(Items.wheat_seeds);
+		foods.add(Items.wheat);
 		return foods.get(rand(foods.size()));
 	}
 	
@@ -164,42 +215,19 @@ public class MobDrops {
 	 * @param e The event to Pull Objects from.
 	 * */
 	private static void Mule(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
+		Entity w = e.entityLiving;
+		int amt = ran.nextInt(2+e.lootingLevel);
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(4));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.LEATHER, rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(3));};break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.WHEAT, rand(3));};break;
+			default:if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(4));};break;
+			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.leather, rand(3));};break;
+			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(3));};break;
+			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.wheat, rand(3));};break;
 			// LOOTING DROPS
-			case 3: if(drop(NormalOdds)==true){w.dropItem(Items.BEETROOT_SEEDS, rand(6));};break;
-			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.MELON_SEEDS,rand(6));};break;
-			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.PUMPKIN_SEEDS, rand(6));};break;
-		}
-	}
-
-
-	/**
-	 * Llama Method Drops specific items.
-	 * 
-	 * @param e The event to Pull Objects from.
-	 * */
-	private static void Llama(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
-		//Base Drop Tweaked.
-		switch(amt) {
-			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.LEATHER, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.MUTTON, rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(3));};break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.LEATHER, rand(3));};break;
-			// LOOTING DROPS
-			case 3: if(drop(NormalOdds)==true){w.dropItem(Items.PUMPKIN_SEEDS, rand(6));};break;
-			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.MELON_SEEDS,rand(6));};break;
-			case 5: if(drop(NormalOdds)==true){w.dropItem(IFB(Blocks.CARPET), rand(2));};break;
+			//case 3: if(drop(NormalOdds)==true){w.dropItem(Items.BEETROOT_seeds, rand(6));};break; 1.12 EDITION ISSUE!
+			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.melon_seeds,rand(6));};break;
+			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.pumpkin_seeds, rand(6));};break;
 		}
 	}
 
@@ -210,19 +238,19 @@ public class MobDrops {
 	 * @param e The event to Pull Objects from.
 	 * */
 	private static void Horse(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
+		Entity w = e.entityLiving;
+		int amt = ran.nextInt(2+e.lootingLevel);
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.LEATHER, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.LEATHER, rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(3));};break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.WHEAT, rand(3));};break;
+			default:if(drop(NormalOdds)==true){w.dropItem(Items.leather, rand(1));};break;
+			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.leather, rand(3));};break;
+			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(3));};break;
+			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.wheat, rand(3));};break;
 			// LOOTING DROPS
-			case 3: if(drop(NormalOdds)==true){w.dropItem(Items.BEETROOT_SEEDS, rand(6));};break;
-			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.MELON_SEEDS,rand(6));};break;
-			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.PUMPKIN_SEEDS, rand(6));};break;
+			//case 3: if(drop(NormalOdds)==true){w.dropItem(Items.BEETROOT_seeds, rand(6));};break;
+			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.melon_seeds,rand(6));};break;
+			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.pumpkin_seeds, rand(6));};break;
 		}
 	}
 
@@ -233,19 +261,19 @@ public class MobDrops {
 	 * @param e The event to Pull Objects from.
 	 * */
 	private static void Donkey(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
+		Entity w = e.entityLiving;
+		int amt = ran.nextInt(2+e.lootingLevel);
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.LEATHER, rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(3));};break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.WHEAT, rand(3));};break;
+			default:if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(1));};break;
+			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.leather, rand(3));};break;
+			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(3));};break;
+			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.wheat, rand(3));};break;
 			// LOOTING DROPS
-			case 3: if(drop(NormalOdds)==true){w.dropItem(Items.BEETROOT_SEEDS, rand(6));};break;
-			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.MELON_SEEDS,rand(6));};break;
-			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.PUMPKIN_SEEDS, rand(6));};break;
+			//case 3: if(drop(NormalOdds)==true){w.dropItem(Items.BEETROOT_seeds, rand(6));};break;
+			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.melon_seeds,rand(6));};break;
+			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.pumpkin_seeds, rand(6));};break;
 		}
 	}
 
@@ -256,18 +284,18 @@ public class MobDrops {
 	 * @param e The event to Pull Objects from.
 	 * */
 	private static void Zombie_Villager(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
+		Entity w = e.entityLiving;
+		int amt = ran.nextInt(2+e.lootingLevel);
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.ROTTEN_FLESH, rand(3));};break;
+			default:if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(1));};break;
+			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(3));};break;
+			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.rotten_flesh, rand(3));};break;
 			// LOOTING DROPS
-			case 3: if(drop(NormalOdds)==true){w.dropItem(Items.POISONOUS_POTATO, rand(2));};break;
-			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.IRON_INGOT,rand(3));};break;
-			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.EMERALD, rand(1));};break;
+			case 3: if(drop(NormalOdds)==true){w.dropItem(Items.poisonous_potato, rand(2));};break;
+			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.iron_ingot,rand(3));};break;
+			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.emerald, rand(1));};break;
 		}
 	}
 
@@ -278,19 +306,19 @@ public class MobDrops {
 	 * @param e The event to Pull Objects from.
 	 * */
 	private static void Zombie(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
+		Entity w = e.entityLiving;
+		int amt = ran.nextInt(2+e.lootingLevel);
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.ROTTEN_FLESH, rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.WHEAT_SEEDS, rand(3));};break;
+			default:if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(1));};break;
+			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.rotten_flesh, rand(3));};break;
+			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.wheat_seeds, rand(3));};break;
 			case 2: if(drop(NormalOdds)==true){w.dropItem(RandomFood(), rand(3));};break;
 			// LOOTING DROPS
-			case 3: if(drop(NormalOdds)==true){w.dropItem(Items.BEETROOT_SEEDS, rand(6));};break;
-			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.MELON_SEEDS,rand(6));};break;
-			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.PUMPKIN_SEEDS, rand(6));};break;
+			//case 3: if(drop(NormalOdds)==true){w.dropItem(Items.BEETROOT_seeds, rand(6));};break;
+			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.melon_seeds,rand(6));};break;
+			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.pumpkin_seeds, rand(6));};break;
 		}
 	}
 
@@ -301,20 +329,20 @@ public class MobDrops {
 	 * @param e The event to Pull Objects from.
 	 * */
 	private static void Wither_Skeleton(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
-		if(MoreSkulls==true && drop(WitherSkull)==true ){w.dropItem(new ItemStack(Blocks.SKULL,1,1).getItem(), 1);}
+		Entity w = e.entityLiving;
+		int amt = ran.nextInt(2+e.lootingLevel);
+		if(MoreSkulls==true && drop(WitherSkull)==true ){w.dropItem(new ItemStack(Blocks.skull,1,1).getItem(), 1);}
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.NETHER_WART, rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(3));};break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(3));};break;
+			default:if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(1));};break;
+			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.nether_wart, rand(3));};break;
+			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(3));};break;
+			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(3));};break;
 			// LOOTING DROPS
-			case 3: if(drop(RareOdds)==true){w.dropItem(Items.BONE, rand(8));};break;
+			case 3: if(drop(RareOdds)==true){w.dropItem(Items.bone, rand(8));};break;
 			case 4: if(drop(RareOdds)==true){w.dropItem(getEquipedItem(w),1);};break;
-			case 5: if(drop(WitherSkull)==true && MoreSkulls==false){w.dropItem(new ItemStack(Blocks.SKULL,1,1).getItem(), rand(1));};break;
+			case 5: if(drop(WitherSkull)==true && MoreSkulls==false){w.dropItem(new ItemStack(Blocks.skull,1,1).getItem(), rand(1));};break;
 		}
 	}
 
@@ -325,90 +353,22 @@ public class MobDrops {
 	 * @param e The event to Pull Objects from.
 	 * */
 	private static void Witch(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
+		Entity w = e.entityLiving;
+		int amt = ran.nextInt(2+e.lootingLevel);
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));}	;break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(3));}	;break;
+			default:if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(1));}	;break;
+			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(3));}	;break;
 			case 1: if(drop(NormalOdds)==true){w.dropItem(RandomFood(), rand(3));}	;break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.STICK, rand(3));}	;break;
+			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.stick, rand(3));}	;break;
 			// LOOTING DROPS
-			case 3: if(drop(NormalOdds)==true){w.dropItem(Items.GLASS_BOTTLE, rand(6));};break;
-			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.GLOWSTONE_DUST,rand(6));};break;
-			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.GUNPOWDER, rand(6));};break;
+			case 3: if(drop(NormalOdds)==true){w.dropItem(Items.glass_bottle, rand(6));};break;
+			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.glowstone_dust,rand(6));};break;
+			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.gunpowder, rand(6));};break;
 		}
 	}
 
-
-	/**
-	 * Vindicator Method Drops specific items.
-	 * 
-	 * @param e The event to Pull Objects from.
-	 * */
-	private static void Vindicator(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
-		//Base Drop Tweaked.
-		switch(amt) {
-			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(RandomFood(), rand(3));};break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.EMERALD, rand(1));};break;
-			// LOOTING DROPS
-			case 3: if(drop(NormalOdds)==true){w.dropItem(Items.POISONOUS_POTATO, rand(2));};break;
-			case 4: if(drop(NormalOdds)==true){w.dropItem(RandomFood(),rand(6));};break;
-			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.EMERALD, rand(6));};break;
-		}
-	}
-
-
-	/**
-	 * Vex Method Drops specific items.
-	 * 
-	 * @param e The event to Pull Objects from.
-	 * */
-	private static void Vex(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
-		//Base Drop Tweaked.
-		switch(amt) {
-			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.GHAST_TEAR, rand(1));};break;
-			case 0: break;
-			case 1: break;
-			case 2: break;
-			// LOOTING DROPS
-			case 3: if(rand(4)>3){w.dropItem(Items.DIAMOND, 1);};break;
-			case 4: if(rand(4)>3){w.dropItem(Items.IRON_SWORD,rand(1));};break;
-			case 5: if(rand(4)>3){w.dropItem(Items.GHAST_TEAR, rand(2));};break;
-		}
-	}
-
-
-	/**
-	 * Stray Method Drops specific items.
-	 * 
-	 * @param e The event to Pull Objects from.
-	 * */
-	private static void Stray(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
-		//Base Drop Tweaked.
-		switch(amt) {
-			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(3));};break;
-			case 2: if(rand(4)>3){w.dropItem(Items.ARROW, rand(3));};break;
-			// LOOTING DROPS
-			case 3: if(rand(4)>2){w.dropItem(Items.SKULL, rand(1));};break;
-			case 4: if(rand(4)>3){w.dropItem(Items.BONE, rand(8));};break;
-			case 5: if(rand(4)>3){w.dropItem(getEquipedItem(w), rand(1));};break;
-		}
-	}
 
 
 	/**
@@ -417,8 +377,8 @@ public class MobDrops {
 	 * @param e The event to Pull Objects from.
 	 * */
 	private static void Slime(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		w.dropItem(Items.SLIME_BALL, rand(2));
+		Entity w = e.entityLiving;
+		w.dropItem(Items.slime_ball, rand(2));
 	}
 
 
@@ -428,19 +388,19 @@ public class MobDrops {
 	 * @param e The event to Pull Objects from.
 	 * */
 	private static void Skeleton(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
-		if(MoreSkulls==true) {if(drop(SkeleSkull)==true){w.dropItem(Items.SKULL, 1);}}
+		Entity w = e.entityLiving;
+		int amt = ran.nextInt(2+e.lootingLevel);
+		if(MoreSkulls==true) {if(drop(SkeleSkull)==true){w.dropItem(Items.skull, 1);}}
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(3));};break;
-			case 2: if(drop(RareOdds)==true){w.dropItem(Items.ARROW, rand(3));};break;
+			default:if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(1));};break;
+			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(3));};break;
+			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(3));};break;
+			case 2: if(drop(RareOdds)==true){w.dropItem(Items.arrow, rand(3));};break;
 			// LOOTING DROPS
-			case 3: if(drop(SkeleSkull)==true && MoreSkulls==false){w.dropItem(Items.SKULL, 1);};break;
-			case 4: if(drop(RareOdds)==true){w.dropItem(Items.BONE, rand(8));};break;
+			case 3: if(drop(SkeleSkull)==true && MoreSkulls==false){w.dropItem(Items.skull, 1);};break;
+			case 4: if(drop(RareOdds)==true){w.dropItem(Items.bone, rand(8));};break;
 			case 5: if(drop(RareOdds)==true){w.dropItem(getEquipedItem(w), rand(1));};break;
 		}
 	}
@@ -454,140 +414,62 @@ public class MobDrops {
 	private static void Silverfish(LivingDropsEvent e) {
 		// No Extra Drops deemed neccessary.
 	}
-
-
-	/**
-	 * Shulker Method Drops specific items.
-	 * 
-	 * @param e The event to Pull Objects from.
-	 * */
-	private static void Shulker(LivingDropsEvent e) {
-		// Nothing really extra to add here.
-	}
-
-
+	
 	/**
 	 * Magma Cube Method Drops specific items.
 	 * 
 	 * @param e The event to Pull Objects from.
 	 * */
 	private static void Magma_Cube(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		w.dropItem(Items.MAGMA_CREAM, rand(2));
+		Entity w = e.entityLiving;
+		w.dropItem(Items.magma_cream, rand(2));
 	}
-
-
-	/**
-	 * Guardian Method Drops specific items.
-	 * 
-	 * @param e The event to Pull Objects from.
-	 * */
-	private static void Guardian(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
-		//Base Drop Tweaked.
-		switch(amt) {
-			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(2));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.PRISMARINE_SHARD, rand(3));};break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.FISH, rand(2));};break;
-			// LOOTING DROPS
-			case 3: if(rand(4)>2){w.dropItem(Items.PRISMARINE_CRYSTALS, rand(1));};break;
-			case 4: if(rand(4)>2){w.dropItem(Items.BONE,rand(4));};break;
-			case 5: if(rand(4)>2){w.dropItem(Items.PRISMARINE_SHARD, rand(8));};break;
-		}
-	}
-
-
+	
+	
 	/**
 	 * Ghast Method Drops specific items.
 	 * 
 	 * @param e The event to Pull Objects from.
-	 * */
+	 */
 	private static void Ghast(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
+		Entity w = e.entityLiving;
+		int amt = ran.nextInt(2+e.lootingLevel);
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.GHAST_TEAR, rand(1));};break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.GUNPOWDER, rand(2));};break;
+			default:if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(1));};break;
+			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(3));};break;
+			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.ghast_tear, rand(1));};break;
+			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.gunpowder, rand(2));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>2){w.dropItem(Items.GHAST_TEAR, rand(6));};break;
-			case 4: if(rand(4)>2){w.dropItem(Items.GOLD_NUGGET,rand(6));};break;
-			case 5: if(rand(4)>3){w.dropItem(Items.BLAZE_POWDER, rand(3));};break;
+			case 3: if(rand(4)>2){w.dropItem(Items.ghast_tear, rand(6));};break;
+			case 4: if(rand(4)>2){w.dropItem(Items.gold_nugget,rand(6));};break;
+			case 5: if(rand(4)>3){w.dropItem(Items.blaze_powder, rand(3));};break;
 		}
 	}
+	
+	
 
-
-	/**
-	 * Evoker Method Drops specific items.
-	 * 
-	 * @param e The event to Pull Objects from.
-	 * */
-	private static void Evoker(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
-		//Base Drop Tweaked.
-		switch(amt) {
-			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(RandomFood(), rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(3));};break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(3));};break;
-			// LOOTING DROPS
-			case 3: if(rand(4)>2){w.dropItem(Items.EMERALD, rand(1));};break;
-			case 4: if(rand(4)>2){w.dropItem(RandomFood(),rand(6));};break;
-			case 5: if(rand(4)>3){w.dropItem(Items.TOTEM_OF_UNDYING, rand(1));};break;
-		}
-	}
-
-
-	/**
-	 * Elder Guardian Method Drops specific items.
-	 * 
-	 * @param e The event to Pull Objects from.
-	 * */
-	private static void Elder_Guardian(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
-		//Base Drop Tweaked.
-		switch(amt) {
-			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.PRISMARINE_SHARD, rand(1));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(3));};break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.FISH, rand(3));};break;
-			// LOOTING DROPS
-			case 3: if(rand(4)>2){w.dropItem(Items.PRISMARINE_CRYSTALS, rand(6));};break;
-			case 4: if(rand(4)>2){w.dropItem(Items.FISH,rand(6));};break;
-			case 5: if(rand(4)>2){w.dropItem(Items.PRISMARINE_CRYSTALS, rand(2));};break;
-		}
-	}
-
-
+	
 	/**
 	 * Creeper Method Drops specific items.
 	 * 
 	 * @param e The event to Pull Objects from.
 	 * */
 	private static void Creeper(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
+		Entity w = e.entityLiving;
+		int amt = ran.nextInt(2+e.lootingLevel);
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.GUNPOWDER, rand(3));};break;
-			case 2: if(rand(4)>3){w.dropItem(new ItemStack(Blocks.SKULL,1,4).getItem(), rand(1));};break;
+			default:if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(1));};break;
+			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(3));};break;
+			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.gunpowder, rand(3));};break;
+			case 2: if(rand(4)>3){w.dropItem(new ItemStack(Blocks.skull,1,4).getItem(), rand(1));};break;
 			// LOOTING DROPS
-			case 3: if(drop(NormalOdds)==true){w.dropItem(Items.GUNPOWDER, rand(6));};break;
-			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.GUNPOWDER,rand(8));};break;
-			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.GUNPOWDER, rand(10));};break;
+			case 3: if(drop(NormalOdds)==true){w.dropItem(Items.gunpowder, rand(6));};break;
+			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.gunpowder,rand(8));};break;
+			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.gunpowder, rand(10));};break;
 		}
 	}
 
@@ -598,19 +480,19 @@ public class MobDrops {
 	 * @param e The event to Pull Objects from.
 	 * */
 	private static void Blaze(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
+		Entity w = e.entityLiving;
+		int amt = ran.nextInt(2+e.lootingLevel);
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.BLAZE_ROD, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.BLAZE_ROD, rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.BLAZE_POWDER, rand(3));};break;
-			case 2: if(rand(4)>2){w.dropItem(Items.MAGMA_CREAM, rand(3));};break;
+			default:if(drop(NormalOdds)==true){w.dropItem(Items.blaze_rod, rand(1));};break;
+			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.blaze_rod, rand(3));};break;
+			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.blaze_powder, rand(3));};break;
+			case 2: if(rand(4)>2){w.dropItem(Items.magma_cream, rand(3));};break;
 			// LOOTING DROPS
-			case 3: if(drop(NormalOdds)==true){w.dropItem(Items.BLAZE_ROD, rand(6));};break;
-			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.BLAZE_POWDER,rand(6));};break;
-			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.MAGMA_CREAM, rand(6));};break;
+			case 3: if(drop(NormalOdds)==true){w.dropItem(Items.blaze_rod, rand(6));};break;
+			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.blaze_powder,rand(6));};break;
+			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.magma_cream, rand(6));};break;
 		}
 	}
 
@@ -621,65 +503,19 @@ public class MobDrops {
 	 * @param e The event to Pull Objects from.
 	 * */
 	private static void Zombie_Pigman(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
+		Entity w = e.entityLiving;
+		int amt = ran.nextInt(2+e.lootingLevel);
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.GOLD_NUGGET, rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(3));};break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.PORKCHOP, rand(1));};break;
+			default:if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(1));};break;
+			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.gold_nugget, rand(3));};break;
+			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(3));};break;
+			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.porkchop, rand(1));};break;
 			// LOOTING DROPS
 			case 3: if(drop(NormalOdds)==true){w.dropItem(getEquipedItem(w), rand(1));};break;
-			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.GOLD_NUGGET,rand(6));};break;
-			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.GOLD_INGOT, rand(1));};break;
-		}
-	}
-
-
-	/**
-	 * Polar Bear Method Drops specific items.
-	 * 
-	 * @param e The event to Pull Objects from.
-	 * */
-	private static void Polar_Bear(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
-		//Base Drop Tweaked.
-		switch(amt) {
-			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.SNOWBALL, rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.FISH, rand(3));};break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(4));};break;
-			// LOOTING DROPS
-			case 3: if(drop(NormalOdds)==true){w.dropItem(IFB(Blocks.ICE), rand(2));};break;
-			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.FISH,rand(6));};break;
-			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(6));};break;
-		}
-	}
-
-
-	/**
-	 * Husk Method Drops specific items.
-	 * 
-	 * @param e The event to Pull Objects from.
-	 * */
-	private static void Husk(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
-		//Base Drop Tweaked.
-		switch(amt) {
-			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(RandomFood(), rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.IRON_INGOT, rand(2));};break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.ROTTEN_FLESH, rand(3));};break;
-			// LOOTING DROPS
-			case 3: if(rand(4)>3){w.dropItem(getEquipedItem(w), rand(1));};break;
-			case 4: if(rand(4)>2){w.dropItem(Items.POISONOUS_POTATO,rand(6));};break;
-			case 5: if(rand(4)>2){w.dropItem(Items.GOLD_NUGGET, rand(6));};break;
+			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.gold_nugget,rand(6));};break;
+			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.gold_ingot, rand(1));};break;
 		}
 	}
 
@@ -690,40 +526,17 @@ public class MobDrops {
 	 * @param e The event to Pull Objects from.
 	 * */
 	private static void Ocelot(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
+		Entity w = e.entityLiving;
+		int amt = ran.nextInt(2+e.lootingLevel);
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(2));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.FISH, rand(2));};break;
+			default:if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(1));};break;
+			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(2));};break;
+			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.fish, rand(2));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>2){w.dropItem(Items.FISH, rand(3));};break;
-			case 4: if(rand(4)>3){w.dropItem(Items.EMERALD, rand(1));};break;
-		}
-	}
-
-
-	/**
-	 * Parrot Method Drops specific items.
-	 * 
-	 * @param e The event to Pull Objects from.
-	 * */
-	private static void Parrot(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
-		//Base Drop Tweaked.
-		switch(amt) {
-			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(2));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.FEATHER, rand(3));};break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.WHEAT_SEEDS, rand(3));};break;
-			// LOOTING DROPS
-			case 3: if(drop(NormalOdds)==true){w.dropItem(Items.FEATHER, rand(6));};break;
-			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.MELON_SEEDS,rand(6));};break;
-			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.PUMPKIN_SEEDS, rand(6));};break;
+			case 3: if(rand(4)>2){w.dropItem(Items.fish, rand(3));};break;
+			case 4: if(rand(4)>3){w.dropItem(Items.emerald, rand(1));};break;
 		}
 	}
 
@@ -734,17 +547,17 @@ public class MobDrops {
 	 * @param e The event to Pull Objects from.
 	 * */
 	private static void Wolf(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
+		Entity w = e.entityLiving;
+		int amt = ran.nextInt(2+e.lootingLevel);
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(3));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.RABBIT, rand(1));};break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.BEEF, rand(1));};break;
+			default:if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(3));};break;
+			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(3));};break;
+			//case 1: if(drop(NormalOdds)==true){w.dropItem(Items.RABBIT, rand(1));};break;
+			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.beef, rand(1));};break;
 			// LOOTING DROPS
-			case 3: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(4));};break;
+			case 3: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(4));};break;
 		}
 	}
 
@@ -755,18 +568,18 @@ public class MobDrops {
 	 * @param e The event to Pull Objects from.
 	 * */
 	private static void Iron_Golem(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
+		Entity w = e.entityLiving;
+		int amt = ran.nextInt(2+e.lootingLevel);
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.IRON_INGOT, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.IRON_INGOT, rand(3));};break;
+			default:if(drop(NormalOdds)==true){w.dropItem(Items.iron_ingot, rand(1));};break;
+			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.iron_ingot, rand(3));};break;
 			case 1: if(drop(NormalOdds)==true){w.dropItem(RandomFood(), rand(3));};break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(IFB(Blocks.RED_FLOWER), rand(3));};break;
+			case 2: if(drop(NormalOdds)==true){w.dropItem(IFB(Blocks.red_flower), rand(3));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>2){w.dropItem(Items.IRON_INGOT, rand(6));};break;
-			case 4: if(rand(4)>3){w.dropItem(Items.GOLD_INGOT,rand(1));};break;
+			case 3: if(rand(4)>2){w.dropItem(Items.iron_ingot, rand(6));};break;
+			case 4: if(rand(4)>3){w.dropItem(Items.gold_ingot,rand(1));};break;
 		}
 	}
 
@@ -777,19 +590,19 @@ public class MobDrops {
 	 * @param e The event to Pull Objects from.
 	 * */
 	private static void Ender_Dragon(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
+		Entity w = e.entityLiving;
+		int amt = ran.nextInt(2+e.lootingLevel);
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(16));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(20));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.ENDER_PEARL, rand(16));};break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.GUNPOWDER, rand(15));};break;
+			default:if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(16));};break;
+			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(20));};break;
+			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.ender_pearl, rand(16));};break;
+			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.gunpowder, rand(15));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>2){w.dropItem(Items.DIAMOND, rand(16));};break;
-			case 4: if(rand(4)>2){w.dropItem(Items.EMERALD,rand(16));};break;
-			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.GOLD_INGOT, rand(16));};break;
+			case 3: if(rand(4)>2){w.dropItem(Items.diamond, rand(16));};break;
+			case 4: if(rand(4)>2){w.dropItem(Items.emerald,rand(16));};break;
+			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.gold_ingot, rand(16));};break;
 		}
 	}
 
@@ -800,42 +613,19 @@ public class MobDrops {
 	 * @param e The event to Pull Objects from.
 	 * */
 	private static void Wither(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
+		Entity w = e.entityLiving;
+		int amt = ran.nextInt(2+e.lootingLevel);
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.GOLD_INGOT, rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.IRON_INGOT, rand(3));};break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.COAL, rand(3));};break;
+			default:if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(1));};break;
+			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.gold_ingot, rand(3));};break;
+			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.iron_ingot, rand(3));};break;
+			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.coal, rand(3));};break;
 			// LOOTING DROPS
-			case 3: if(drop(NormalOdds)==true){w.dropItem(Items.EMERALD, rand(6));};break;
-			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.DIAMOND,rand(6));};break;
-			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.QUARTZ, rand(6));};break;
-		}
-	}
-
-
-	/**
-	 * Snow Golem Method Drops specific items.
-	 * 
-	 * @param e The event to Pull Objects from.
-	 * */
-	private static void Snow_Golem(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
-		//Base Drop Tweaked.
-		switch(amt) {
-			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.SNOWBALL, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.SNOWBALL, rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.PUMPKIN_SEEDS, rand(3));};break;
-			case 2: if(rand(4)>3){w.dropItem(Items.GOLD_NUGGET, rand(3));};break;
-			// LOOTING DROPS
-			case 3: if(rand(4)>2){w.dropItem(Items.GOLD_INGOT, rand(1));};break;
-			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.MELON_SEEDS,rand(6));};break;
-			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.PUMPKIN_SEEDS, rand(6));};break;
+			case 3: if(drop(NormalOdds)==true){w.dropItem(Items.emerald, rand(6));};break;
+			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.diamond,rand(6));};break;
+			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.quartz, rand(6));};break;
 		}
 	}
 
@@ -846,19 +636,19 @@ public class MobDrops {
 	 * @param e The event to Pull Objects from.
 	 * */
 	private static void Enderman(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
+		Entity w = e.entityLiving;
+		int amt = ran.nextInt(2+e.lootingLevel);
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.ENDER_PEARL, rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(3));};break;
-			case 2: if(rand(4)>3){w.dropItem(Items.EMERALD, rand(1));};break;
+			default:if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(1));};break;
+			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.ender_pearl, rand(3));};break;
+			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(3));};break;
+			case 2: if(rand(4)>3){w.dropItem(Items.emerald, rand(1));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>2){w.dropItem(Items.ENDER_PEARL, rand(5));};break;
-			case 4: if(rand(4)>3){w.dropItem(Items.EMERALD,rand(2));};break;
-			case 5: if(rand(4)>3){w.dropItem(Items.ENDER_EYE, rand(3));};break;
+			case 3: if(rand(4)>2){w.dropItem(Items.ender_pearl, rand(5));};break;
+			case 4: if(rand(4)>3){w.dropItem(Items.emerald,rand(2));};break;
+			case 5: if(rand(4)>3){w.dropItem(Items.ender_eye, rand(3));};break;
 		}
 	}
 
@@ -869,19 +659,19 @@ public class MobDrops {
 	 * @param e The event to Pull Objects from.
 	 * */
 	private static void Cave_Spider(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
+		Entity w = e.entityLiving;
+		int amt = ran.nextInt(2+e.lootingLevel);
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(2));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.SPIDER_EYE, rand(3));};break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.STRING, rand(3));};break;
+			default:if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(1));};break;
+			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(2));};break;
+			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.spider_eye, rand(3));};break;
+			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.string, rand(3));};break;
 			// LOOTING DROPS
-			case 3: if(drop(NormalOdds)==true){w.dropItem(Items.STRING, rand(6));};break;
-			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.SPIDER_EYE,rand(6));};break;
-			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.GOLD_INGOT, rand(2));};break;
+			case 3: if(drop(NormalOdds)==true){w.dropItem(Items.string, rand(6));};break;
+			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.spider_eye,rand(6));};break;
+			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.gold_ingot, rand(2));};break;
 		}
 	}
 
@@ -894,19 +684,19 @@ public class MobDrops {
 	 * @param e The event to Pull Objects from.
 	 * */
 	private static void Cow(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
+		Entity w = e.entityLiving;
+		int amt = ran.nextInt(2+e.lootingLevel);
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.BEEF, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.LEATHER, rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(3));};break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.WHEAT, rand(3));};break;
+			default:if(drop(NormalOdds)==true){w.dropItem(Items.beef, rand(1));};break;
+			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.leather, rand(3));};break;
+			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(3));};break;
+			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.wheat, rand(3));};break;
 			// LOOTING DROPS
-			case 3: if(drop(NormalOdds)==true){w.dropItem(Items.BEETROOT_SEEDS, rand(6));};break;
-			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.MELON_SEEDS,rand(6));};break;
-			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.PUMPKIN_SEEDS, rand(6));};break;
+			//case 3: if(drop(NormalOdds)==true){w.dropItem(Items.BEETROOT_seeds, rand(6));};break;
+			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.melon_seeds,rand(6));};break;
+			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.pumpkin_seeds, rand(6));};break;
 		}
 		
 	}
@@ -916,20 +706,20 @@ public class MobDrops {
 	 * @param e The event to Pull Objects from.
 	 * */
 	private static void Chicken(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(4+e.getLootingLevel());
+		Entity w = e.entityLiving;
+		int amt = ran.nextInt(4+e.lootingLevel);
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.CHICKEN, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.EGG, rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.FEATHER, rand(2));};break;
-			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.MELON_SEEDS, rand(2));};break;
+			default:if(drop(NormalOdds)==true){w.dropItem(Items.chicken, rand(1));};break;
+			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.egg, rand(3));};break;
+			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(1));};break;
+			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.feather, rand(2));};break;
+			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.melon_seeds, rand(2));};break;
 			// LOOTING DROPS
-			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.EGG, rand(2));};break;
-			case 6: if(drop(NormalOdds)==true){w.dropItem(Items.FEATHER,rand(6));};break;
-			case 7: if(drop(NormalOdds)==true){w.dropItem(Items.WHEAT_SEEDS, rand(6));};break;
+			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.egg, rand(2));};break;
+			case 6: if(drop(NormalOdds)==true){w.dropItem(Items.feather,rand(6));};break;
+			case 7: if(drop(NormalOdds)==true){w.dropItem(Items.wheat_seeds, rand(6));};break;
 		}
 		
 	}
@@ -939,63 +729,44 @@ public class MobDrops {
 	 * @param e The event to Pull Objects from.
 	 * */
 	private static void Pig(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
+		Entity w = e.entityLiving;
+		int amt = ran.nextInt(2+e.lootingLevel);
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.PORKCHOP, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.CARROT, rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.PORKCHOP, rand(2));};break;
+			default:if(drop(NormalOdds)==true){w.dropItem(Items.porkchop, rand(1));};break;
+			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.carrot, rand(3));};break;
+			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(1));};break;
+			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.porkchop, rand(2));};break;
 			// LOOTING DROPS
-			case 3: if(drop(NormalOdds)==true){w.dropItem(Items.PORKCHOP, rand(6));};break;
-			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.CARROT_ON_A_STICK,1);};break;
-			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(6));};break;
+			case 3: if(drop(NormalOdds)==true){w.dropItem(Items.porkchop, rand(6));};break;
+			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.carrot_on_a_stick,1);};break;
+			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(6));};break;
 		}
 		
 	}
-	/**
-	 * Rabbit Method Drops specific items.
-	 * 
-	 * @param e The event to Pull Objects from.
-	 * */
-	private static void Rabbit(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
-		//Base Drop Tweaked.
-		switch(amt) {
-			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.RABBIT_HIDE, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.CARROT, rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.PORKCHOP, rand(2));};break;
-			// LOOTING DROPS
-			case 3: if(drop(NormalOdds)==true){w.dropItem(Items.RABBIT_FOOT, rand(2));};break;
-			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.CARROT,rand(6));};break;
-			case 5: if(((EntityRabbit)w).getRabbitType()==4){w.dropItem(Items.GOLDEN_CARROT, rand(2));};break;
-		}
-		
-	}
+	
+
+	
 	/**
 	 * Mooshroom Method Drops specific items.
 	 * 
 	 * @param e The event to Pull Objects from.
 	 * */
 	private static void Mooshroom(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
+		Entity w = e.entityLiving;
+		int amt = ran.nextInt(2+e.lootingLevel);
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.MUSHROOM_STEW, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.WHEAT, rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.MILK_BUCKET, rand(1));};break;
+			default:if(drop(NormalOdds)==true){w.dropItem(Items.mushroom_stew, rand(1));};break;
+			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.wheat, rand(3));};break;
+			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(1));};break;
+			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.milk_bucket, rand(1));};break;
 			// LOOTING DROPS
-			case 3: if(rand(4)>3){w.dropItem(Items.GOLDEN_APPLE, rand(2));};break;
-			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.BEEF,rand(6));};break;
-			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.PUMPKIN_SEEDS, rand(6));};break;
+			case 3: if(rand(4)>3){w.dropItem(Items.golden_apple, rand(2));};break;
+			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.beef,rand(6));};break;
+			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.pumpkin_seeds, rand(6));};break;
 		}
 		
 	}
@@ -1005,19 +776,19 @@ public class MobDrops {
 	 * @param e The event to Pull Objects from.
 	 * */
 	private static void Sheep(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
+		Entity w = e.entityLiving;
+		int amt = ran.nextInt(2+e.lootingLevel);
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.MUTTON, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(IFB(Blocks.WOOL), rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.WHEAT, rand(2));};break;
+			//default:if(drop(NormalOdds)==true){w.dropItem(Items.MUTTON, rand(1));};break;
+			case 0: if(drop(NormalOdds)==true){w.dropItem(IFB(Blocks.wool), rand(3));};break;
+			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(1));};break;
+			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.wheat, rand(2));};break;
 			// LOOTING DROPS
-			case 3: if(drop(NormalOdds)==true){w.dropItem(Items.BEETROOT_SEEDS, rand(2));};break;
-			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.PUMPKIN_SEEDS,rand(6));};break;
-			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.WHEAT_SEEDS, rand(6));};break;
+			//case 3: if(drop(NormalOdds)==true){w.dropItem(Items.BEETROOT_seeds, rand(2));};break;
+			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.pumpkin_seeds,rand(6));};break;
+			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.wheat_seeds, rand(6));};break;
 		}
 		
 	}
@@ -1027,19 +798,19 @@ public class MobDrops {
 	 * @param e The event to Pull Objects from.
 	 * */
 	private static void Squid(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
+		Entity w = e.entityLiving;
+		int amt = ran.nextInt(2+e.lootingLevel);
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.DYE, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.CARROT, rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.PORKCHOP, rand(2));};break;
+			default:if(drop(NormalOdds)==true){w.dropItem(Items.dye, rand(1));};break;
+			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.carrot, rand(3));};break;
+			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(1));};break;
+			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.porkchop, rand(2));};break;
 			// LOOTING DROPS
-			case 3: if(drop(NormalOdds)==true){w.dropItem(new ItemStack(Items.FISHING_ROD, 1, rand(50)).getItem(), rand(2));};break;
-			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.FISH,rand(6));};break;
-			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.DYE, rand(6));};break;
+			case 3: if(drop(NormalOdds)==true){w.dropItem(new ItemStack(Items.fishing_rod, 1, rand(50)).getItem(), rand(2));};break;
+			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.fish,rand(6));};break;
+			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.dye, rand(6));};break;
 		}
 		
 	}
@@ -1049,19 +820,19 @@ public class MobDrops {
 	 * @param e The event to Pull Objects from.
 	 * */
 	private static void Villager(LivingDropsEvent e) {
-		Entity w = e.getEntity();
-		int amt = ran.nextInt(2+e.getLootingLevel());
+		Entity w = e.entityLiving;
+		int amt = ran.nextInt(2+e.lootingLevel);
 		//Base Drop Tweaked.
 		switch(amt) {
 			// Normal Extra Drops 
-			default:if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.POTATO, rand(3));};break;
-			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.BONE, rand(1));};break;
-			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.APPLE, rand(2));};break;
+			default:if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(1));};break;
+			case 0: if(drop(NormalOdds)==true){w.dropItem(Items.potato, rand(3));};break;
+			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(1));};break;
+			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.apple, rand(2));};break;
 			// LOOTING DROPS
-			case 3: if(drop(NormalOdds)==true){w.dropItem(IFB(Blocks.RED_FLOWER), rand(2));};break;
-			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.IRON_INGOT,rand(6));};break;
-			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.EMERALD, rand(6));};break;
+			case 3: if(drop(NormalOdds)==true){w.dropItem(IFB(Blocks.red_flower), rand(2));};break;
+			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.iron_ingot,rand(6));};break;
+			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.emerald, rand(6));};break;
 		}
 		
 	}
