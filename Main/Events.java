@@ -8,7 +8,7 @@ public class Events {
 	
 	@SubscribeEvent
 	public void deathDrops(LivingDropsEvent e) {
-		if(e.isRecentlyHit()==false&&(e.getSource().equals(DamageSource.ON_FIRE)))return;
+		if(e.recentlyHit==false&&(e.source.equals(DamageSource.onFire)))return;
 		MobDrops.LivingDropEvent(e);
 	}
 }
