@@ -113,10 +113,10 @@ public class MobDrops {
 	 */
 	private static int rand(int max) {
 		if(max<=0)max=1;
-		int ret = new Random().nextInt(max);
+		int ret = ran.nextInt(max);
 		
 		// === The Line Below is OPTIONAL. Toggleable in the CONFIG. ===
-		if(MORE==true){ret = new Random().nextInt(16)+6;return ret;}
+		if(MORE==true){ret = ran.nextInt(16)+6;return ret;}
 		// =============================================================
 		
 		if(ret<=1)ret=1;
@@ -140,7 +140,7 @@ public class MobDrops {
 		foods.add(Items.CARROT);
 		foods.add(Items.WHEAT_SEEDS);
 		foods.add(Items.WHEAT);
-		return foods.get(rand(foods.size()));
+		return foods.get(ran.nextInt(foods.size()));
 	}
 	
 	
