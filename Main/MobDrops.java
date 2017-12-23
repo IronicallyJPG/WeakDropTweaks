@@ -60,7 +60,6 @@ public class MobDrops {
 	}
 	
 	public static void LivingDropEvent(LivingDropsEvent e) {
-		//DEBUG : System.out.println("WDT > Mob Killed Name > " + e.entityLiving.getName() );
 		EntityLiving meme = (EntityLiving) e.entityLiving;
 		
 		if(meme instanceof EntityBlaze) {
@@ -87,7 +86,6 @@ public class MobDrops {
 				case 1: Donkey(e);break;
 				case 2: Mule(e);break;
 			}
-			// NEEDS TO BE CUSTOM MADE!
 		}else if(meme instanceof EntityMagmaCube) {
 			Magma_Cube(e);
 		}else if(meme instanceof EntityIronGolem) {
@@ -111,7 +109,6 @@ public class MobDrops {
 			}else {
 				Skeleton(e);
 			}
-			// CUSTOM CODE NEEDED!
 		}else if(meme instanceof EntitySlime) {
 			Slime(e);
 		}else if(meme instanceof EntitySquid) {
@@ -136,15 +133,11 @@ public class MobDrops {
 		}
 		return;
 	}
-	//===================
-	
 	/**
-	
-	
+	 *  Gets Equipped Item.
 	*/
-	private static Item getEquipedItem(Entity e) {
-		return null; // METHOD BROKEN!
-		//return new ItemStack(e.getHeldEquipment().iterator().next().getItem(),1).getItem();
+	private static Item getEquipedItem(EntityLiving e) {
+		return new ItemStack(e.getEquipmentInSlot(0).getItem(), 1).getItem();
 	}
 	
 	/** Crunches the Odds and Spits True or False
@@ -191,13 +184,13 @@ public class MobDrops {
 		foods.add(Items.carrot);
 		foods.add(Items.wheat_seeds);
 		foods.add(Items.wheat);
-		return foods.get(rand(foods.size()));
+		return foods.get(ran.nextInt(foods.size()));
 	}
 	
 	
 	//=================================================================================================
 	//=================================================================================================
-	// TO ANYBODY READING THIS, This code does have doule layer randoms, this is to help add balance
+	// TO ANYBODY READING THIS, This code does have double layer randoms, this is to help add balance
 	// as well as extra drops to the game WTIHOUT making it painfully obvious.
 	//
 	// Any critism or tips or ideas can be submitted to the Curse Page. I check daily :)
@@ -341,7 +334,7 @@ public class MobDrops {
 			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(3));};break;
 			// LOOTING DROPS
 			case 3: if(drop(RareOdds)==true){w.dropItem(Items.bone, rand(8));};break;
-			case 4: if(drop(RareOdds)==true){w.dropItem(getEquipedItem(w),1);};break;
+			case 4: if(drop(RareOdds)==true){w.dropItem(getEquipedItem((EntityLiving) w),1);};break;
 			case 5: if(drop(WitherSkull)==true && MoreSkulls==false){w.dropItem(new ItemStack(Blocks.skull,1,1).getItem(), rand(1));};break;
 		}
 	}
@@ -401,7 +394,7 @@ public class MobDrops {
 			// LOOTING DROPS
 			case 3: if(drop(SkeleSkull)==true && MoreSkulls==false){w.dropItem(Items.skull, 1);};break;
 			case 4: if(drop(RareOdds)==true){w.dropItem(Items.bone, rand(8));};break;
-			case 5: if(drop(RareOdds)==true){w.dropItem(getEquipedItem(w), rand(1));};break;
+			case 5: if(drop(RareOdds)==true){w.dropItem(getEquipedItem((EntityLiving)w), rand(1));};break;
 		}
 	}
 
@@ -513,7 +506,7 @@ public class MobDrops {
 			case 1: if(drop(NormalOdds)==true){w.dropItem(Items.bone, rand(3));};break;
 			case 2: if(drop(NormalOdds)==true){w.dropItem(Items.porkchop, rand(1));};break;
 			// LOOTING DROPS
-			case 3: if(drop(NormalOdds)==true){w.dropItem(getEquipedItem(w), rand(1));};break;
+			case 3: if(drop(NormalOdds)==true){w.dropItem(getEquipedItem((EntityLiving)w), rand(1));};break;
 			case 4: if(drop(NormalOdds)==true){w.dropItem(Items.gold_nugget,rand(6));};break;
 			case 5: if(drop(NormalOdds)==true){w.dropItem(Items.gold_ingot, rand(1));};break;
 		}
